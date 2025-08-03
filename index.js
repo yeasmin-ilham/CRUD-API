@@ -1,8 +1,13 @@
 import express from "express"
-const app = express();
+import bodyParser from 'body-parser';
 import userRouter from "../CRUD API/route/userinfo.js"
 
+const app = express();
+
+// middleware
+app.use(bodyParser.json());
 app.use('/users' , userRouter)
+
 
 const PORT = 5000;
 
